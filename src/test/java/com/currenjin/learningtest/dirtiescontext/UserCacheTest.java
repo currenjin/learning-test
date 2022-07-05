@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.NullSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Set;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -22,18 +22,18 @@ class UserCacheTest {
 
     @Test
     void 유저_리스트() {
-        Set<User> actual = sut.getUserList();
+        List<User> actual = sut.getUserList();
 
         assertThat(actual.size()).isEqualTo(0);
     }
 
     @Test
     void 유저를_추가한다() {
-        Set<User> userList = sut.getUserList();
+        List<User> userList = sut.getUserList();
         assertThat(userList.size()).isEqualTo(0);
 
         sut.addUser(user);
-        Set<User> actual = sut.getUserList();
+        List<User> actual = sut.getUserList();
 
         assertThat(actual.size()).isEqualTo(1);
     }

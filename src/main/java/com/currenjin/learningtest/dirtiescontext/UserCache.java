@@ -2,16 +2,15 @@ package com.currenjin.learningtest.dirtiescontext;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class UserCache {
 
-    private Set<User> userList = new HashSet<>();
+    private List<User> userList = new ArrayList<>();
 
-
-    public Set<User> getUserList() {
+    public List<User> getUserList() {
         return userList;
     }
 
