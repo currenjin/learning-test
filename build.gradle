@@ -15,6 +15,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // NOTE: mocked static 을 위해 추가합니다
+    testImplementation 'org.mockito:mockito-inline:3.6.0'
 }
 
 tasks.named('test') {
