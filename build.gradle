@@ -20,6 +20,10 @@ dependencies {
     testImplementation 'org.mockito:mockito-inline:3.6.0'
 }
 
+tasks.named('test') {
+    useJUnitPlatform ()
+}
+
 //NOTE: 테스트 수행 시, dirty 태그가 붙은 테스트는 제외
 //tasks.named('test') {
 //    useJUnitPlatform {
