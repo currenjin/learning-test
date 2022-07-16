@@ -1,20 +1,21 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.1'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'io.freefair.lombok' version '6.0.0-m2'
 }
-
-group = 'com.currenjin'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.assertj:assertj-core:3.6.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // NOTE: data jdbc test 를 위해 추가합니다
+    implementation 'org.springframework.data:spring-data-jdbc:2.2.4'
+    implementation 'org.postgresql:postgresql:42.2.24.jre7'
+    testImplementation 'io.zonky.test:embedded-database-spring-test:2.1.0'
 
     // NOTE: mocked static 을 위해 추가합니다
     testImplementation 'org.mockito:mockito-inline:3.6.0'

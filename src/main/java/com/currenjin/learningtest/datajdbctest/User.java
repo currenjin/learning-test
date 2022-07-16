@@ -1,7 +1,12 @@
 package com.currenjin.learningtest.datajdbctest;
 
-import org.apache.logging.log4j.util.Strings;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 
+@Getter
+@AllArgsConstructor(onConstructor_ = @PersistenceConstructor)
 public class User {
 
     public static User of(Long id, String name) {
@@ -10,13 +15,9 @@ public class User {
         return new User(id, name);
     }
 
-    private Long id;
-    private String name;
-
-    public User(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @Id
+    private final Long id;
+    private final String name;
 
     public String getName() {
         return this.name;
@@ -32,7 +33,7 @@ public class User {
             throw new IllegalArgumentException();
         }
 
-        if (Strings.isBlank(name)) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException();
         }
     }
