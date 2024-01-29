@@ -1,5 +1,6 @@
-package com.currenjin.learningtest.spring.bean;
+package com.currenjin.learningtest.core.bean;
 
+import com.currenjin.learningtest.core.bean.ExampleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

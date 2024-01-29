@@ -1,4 +1,4 @@
-package com.currenjin.learningtest.spring.bean;
+package com.currenjin.learningtest.core.bean;
 
 import org.springframework.stereotype.Service;
 
